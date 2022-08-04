@@ -14,4 +14,4 @@ steps:
       - '-d'
       - '-r'
       - build
-      - 'gs://iot-dev-demo'
+      - 'gs://iot-dev-demo/build'
