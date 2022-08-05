@@ -13,12 +13,12 @@ steps:
 - name: 'gcr.io/cloud-builders/yarn'
   args: ['run', 'build']
   env:
-  - 'REACT_APP_BACKEND_URL=${_REACT_APP_BACKEND_URL}'
+  - 'REACT_APP_BACKEND_URL=http://testiotdev:8080/api/v1'
   - 'NODE_PATH=./src'
 # Deploy
 - name: gcr.io/cloud-builders/gsutil
-  args: ["-m", "rsync", "-d", "-r", "build", "gs://${_FE_STAGING_BUCKET_NAME}"]
+  args: ["-m", "rsync", "-d", "-r", "build", "gs://jaisona123"]
 # Grant public permission
 # TODO: it should be remove, by setting default permissions for the bucket.
 - name: gcr.io/cloud-builders/gsutil
-  args: ["-m", "acl", "ch", "-u", "AllUsers:R", "gs://${_FE_STAGING_BUCKET_NAME}/**"]	  
+  args: ["-m", "acl", "ch", "-u", "AllUsers:R", "gs://jaison123/**"]	  
