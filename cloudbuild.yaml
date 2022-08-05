@@ -14,7 +14,7 @@ steps:
   - 'NODE_PATH=./src'
 # Deploy
 - name: gcr.io/cloud-builders/gsutil
-  args: ["-m", "rsync", "-d", "-r", "build", "gs://jaisona123"]
+  args: ["-m", "rsync", "-d", "-r", "build", "gs://jaison123"]
 # Grant public permission
 # TODO: it should be remove, by setting default permissions for the bucket.
 - name: gcr.io/cloud-builders/gsutil
