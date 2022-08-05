@@ -1,16 +1,13 @@
 # This is script for https://cloud.google.com/cloud-build/
 steps:
 # Install
-- name: 'gcr.io/cloud-builders/npm'
+steps:
+- name: node:16.13.0
+  entrypoint: npm
   args: ['install']
-# Lint
-- name: 'gcr.io/cloud-builders/npm'
-  args: ['run', 'lint']
-# Test
-- name: 'gcr.io/cloud-builders/npm'
-  args: ['run', 'unittest']
-# Build
-- name: 'gcr.io/cloud-builders/npm'
+
+- name: node:16.13.0
+  entrypoint: npm
   args: ['run', 'build']
   env:
   - 'REACT_APP_BACKEND_URL=http://testiotdev:8080/api/v1'
